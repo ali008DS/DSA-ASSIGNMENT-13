@@ -1,0 +1,16 @@
+def reverse_stack(stack):
+    if not stack:
+        return
+    
+    temp = stack.pop()
+    reverse_stack(stack)
+    insert_at_bottom(stack, temp)
+
+def insert_at_bottom(stack, val):
+    if not stack:
+        stack.append(val)
+        return
+    
+    temp = stack.pop()
+    insert_at_bottom(stack, val)
+    stack.append(temp)
